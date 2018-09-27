@@ -23,12 +23,14 @@ class EntryPage: UIViewController {
     
      let entryData = TravelBrosSQL()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         entryData.loadOne(entryId: entryID)
         setEntryData()
     }
     
+    //tar infon från entry data och databasen och lägger upp den i sidan
     func setEntryData(){
         dateLabel.text = entryData.oneEntry.date
         entryText.text = entryData.oneEntry.entry
