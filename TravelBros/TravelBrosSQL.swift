@@ -60,7 +60,7 @@ class TravelBrosSQL {
                 print(error)
             }
             database.close()
-            dump(entryArray)
+//            dump(entryArray)
         }
     }
     

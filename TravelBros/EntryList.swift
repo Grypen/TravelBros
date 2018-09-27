@@ -53,19 +53,19 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let row = indexPath.row
         let entryCell = entryData.entryArray[row]
         cell.entryLabel.text = entryCell.date
-        print(entryData.entryArray[row])
+//        print(entryData.entryArray[row])
 //        cell.entryImage.image = entryCell.thumb
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
-        performSegue(withIdentifier: "showRestPage", sender: row)
+        performSegue(withIdentifier: "TravelBroItemShowDetails", sender: row)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showRestPage" {
+        if segue.identifier == "TravelBroItemShowDetails" {
             if let entryPage = segue.destination as? EntryPage {
                 if let indx = sender as? Int {
                     let newEntry = entryData.entryArray[indx]
