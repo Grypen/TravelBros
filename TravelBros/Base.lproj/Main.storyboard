@@ -184,9 +184,10 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="imgImage" destination="bbn-RM-0Fd" id="BTJ-Y6-0v7"/>
-                        <outlet property="textAboutDay" destination="2ib-h3-ij9" id="Wfb-uC-RJN"/>
+                        <outlet property="entryEntry" destination="2ib-h3-ij9" id="K0d-qj-cHW"/>
+                        <outlet property="entryImage" destination="bbn-RM-0Fd" id="rzK-9Y-CAp"/>
                         <outlet property="textAddress" destination="YrQ-zc-heV" id="gK3-B7-VsR"/>
+                        <outlet property="textDatePick" destination="FFc-Jf-qkn" id="W2v-7Q-FmE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykO-GL-p9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
