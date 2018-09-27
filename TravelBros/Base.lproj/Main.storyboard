@@ -302,25 +302,35 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-8O-LeQ">
-                                <rect key="frame" x="16" y="293" width="343" height="354"/>
+                                <rect key="frame" x="16" y="322" width="343" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="FvP-r6-00L"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADRESSS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9f-zV-2dA">
+                                <rect key="frame" x="76" y="535" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="22b-jg-aEe"/>
+                            <constraint firstItem="r9f-zV-2dA" firstAttribute="top" secondItem="v9G-Xz-2Zc" secondAttribute="bottom" constant="8" id="7Bb-Zh-5bl"/>
+                            <constraint firstAttribute="bottom" secondItem="ILQ-8O-LeQ" secondAttribute="bottom" constant="20" symbolic="YES" id="IFB-t8-jwl"/>
+                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="top" secondItem="r9f-zV-2dA" secondAttribute="bottom" constant="8" id="IG5-y1-HA3"/>
                             <constraint firstItem="v9G-Xz-2Zc" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="Lgr-LO-aoV"/>
-                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="top" secondItem="v9G-Xz-2Zc" secondAttribute="bottom" constant="8" id="NJC-5L-NBQ"/>
                             <constraint firstItem="v9G-Xz-2Zc" firstAttribute="leading" secondItem="ZaF-ZO-iHT" secondAttribute="leading" id="fgM-UD-Gap"/>
                             <constraint firstItem="v9G-Xz-2Zc" firstAttribute="top" secondItem="bEW-8y-MYk" secondAttribute="bottom" constant="8" id="gQB-aX-Dka"/>
                             <constraint firstItem="bEW-8y-MYk" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="ken-Pd-a7e"/>
-                            <constraint firstAttribute="bottom" secondItem="ILQ-8O-LeQ" secondAttribute="bottom" constant="20" symbolic="YES" id="kkn-ce-vnP"/>
                             <constraint firstItem="v9G-Xz-2Zc" firstAttribute="centerX" secondItem="ILQ-8O-LeQ" secondAttribute="centerX" id="lh4-X5-Tzq"/>
                             <constraint firstItem="bEW-8y-MYk" firstAttribute="top" secondItem="SFK-Gc-cgY" secondAttribute="top" id="oOR-e9-qiG"/>
-                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="leading" secondItem="ZaF-ZO-iHT" secondAttribute="leadingMargin" id="t7R-M7-WSa"/>
+                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="qr5-x0-Khm"/>
+                            <constraint firstItem="r9f-zV-2dA" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="vbX-av-dHu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SFK-Gc-cgY"/>
                     </view>
