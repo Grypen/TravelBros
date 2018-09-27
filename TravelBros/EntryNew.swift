@@ -10,6 +10,8 @@ import UIKit
 
 class NewEntry: UITableViewController{
     
+    
+    
     @IBOutlet weak var datePick: UITextField!
     
     private var datePicker: UIDatePicker?
