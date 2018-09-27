@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="27"/>
         </scene>
-        <!--Table View Controller-->
+        <!--New Entry-->
         <scene sceneID="sYR-ZQ-n6e">
             <objects>
-                <tableViewController id="9vs-p1-0fu" sceneMemberID="viewController">
+                <tableViewController id="9vs-p1-0fu" customClass="NewEntry" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0gN-Fs-Y9m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,10 +183,10 @@
             </objects>
             <point key="canvasLocation" x="1650" y="-639"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail Map-->
         <scene sceneID="TMQ-mc-F73">
             <objects>
-                <viewController id="SLD-ZA-aUq" sceneMemberID="viewController">
+                <viewController id="SLD-ZA-aUq" customClass="EntryDetailMap" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1cn-dg-SEK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="2365.5999999999999" y="26.53673163418291"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry List-->
         <scene sceneID="cG9-w8-OBz">
             <objects>
-                <viewController id="SiI-QF-lho" sceneMemberID="viewController">
+                <viewController id="SiI-QF-lho" customClass="EntryList" customModule="TravelBros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Wxu-cC-0GZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,10 +260,10 @@
             </objects>
             <point key="canvasLocation" x="884.70764617691157" y="26.399999999999999"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry Detail-->
         <scene sceneID="vtj-qE-0gi">
             <objects>
-                <viewController id="98g-V7-eS1" sceneMemberID="viewController">
+                <viewController id="98g-V7-eS1" customClass="EntryDetail" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZaF-ZO-iHT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
