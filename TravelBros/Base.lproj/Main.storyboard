@@ -191,12 +191,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-YV-zVg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4PB-YV-zVg">
+                                <rect key="frame" x="0.0" y="-18" width="375" height="603"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4PB-YV-zVg" firstAttribute="bottom" secondItem="tai-mj-Scx" secondAttribute="bottom" id="6mL-bq-xsW"/>
+                            <constraint firstAttribute="trailing" secondItem="4PB-YV-zVg" secondAttribute="trailing" id="DtP-H6-baf"/>
+                            <constraint firstItem="4PB-YV-zVg" firstAttribute="top" secondItem="tai-mj-Scx" secondAttribute="top" id="vtr-Rg-vSS"/>
+                            <constraint firstItem="4PB-YV-zVg" firstAttribute="leading" secondItem="1cn-dg-SEK" secondAttribute="leading" id="wkp-er-qwx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tai-mj-Scx"/>
                     </view>
                 </viewController>
@@ -229,20 +234,17 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-ft-PEd">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-ft-PEd">
+                                <rect key="frame" x="177" y="324" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="XzW-kS-p89" firstAttribute="top" secondItem="74E-ua-JRu" secondAttribute="top" id="XuE-Lo-I1t"/>
-                            <constraint firstItem="hKl-ft-PEd" firstAttribute="leading" secondItem="74E-ua-JRu" secondAttribute="leading" constant="177" id="dBv-kk-yY6"/>
-                            <constraint firstItem="74E-ua-JRu" firstAttribute="trailing" secondItem="hKl-ft-PEd" secondAttribute="trailing" constant="178" id="f6V-Nn-ykb"/>
                             <constraint firstItem="XzW-kS-p89" firstAttribute="leading" secondItem="Wxu-cC-0GZ" secondAttribute="leading" id="o0i-Ig-HuK"/>
                             <constraint firstItem="XzW-kS-p89" firstAttribute="bottom" secondItem="74E-ua-JRu" secondAttribute="bottom" id="rKI-VD-5UV"/>
-                            <constraint firstItem="74E-ua-JRu" firstAttribute="bottom" secondItem="hKl-ft-PEd" secondAttribute="bottom" constant="324" id="rQr-cP-CqD"/>
                             <constraint firstAttribute="trailing" secondItem="XzW-kS-p89" secondAttribute="trailing" id="rrM-wg-sCo"/>
-                            <constraint firstItem="hKl-ft-PEd" firstAttribute="top" secondItem="74E-ua-JRu" secondAttribute="top" constant="259" id="u8c-it-jZ0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="74E-ua-JRu"/>
                     </view>
@@ -268,19 +270,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEW-8y-MYk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="39"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="DATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEW-8y-MYk">
+                                <rect key="frame" x="148" y="120" width="35" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9G-Xz-2Zc">
-                                <rect key="frame" x="0.0" y="111" width="375" height="174"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9G-Xz-2Zc">
+                                <rect key="frame" x="0.0" y="272" width="375" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="vJI-jY-w8b"/>
+                                </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-8O-LeQ">
+                                <rect key="frame" x="2" y="4367" width="343" height="354"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="22b-jg-aEe"/>
+                            <constraint firstItem="v9G-Xz-2Zc" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="Lgr-LO-aoV"/>
+                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="top" secondItem="v9G-Xz-2Zc" secondAttribute="bottom" constant="8" id="NJC-5L-NBQ"/>
+                            <constraint firstItem="v9G-Xz-2Zc" firstAttribute="leading" secondItem="ZaF-ZO-iHT" secondAttribute="leading" id="fgM-UD-Gap"/>
+                            <constraint firstItem="v9G-Xz-2Zc" firstAttribute="top" secondItem="bEW-8y-MYk" secondAttribute="bottom" constant="8" id="gQB-aX-Dka"/>
+                            <constraint firstItem="bEW-8y-MYk" firstAttribute="centerX" secondItem="ZaF-ZO-iHT" secondAttribute="centerX" id="ken-Pd-a7e"/>
+                            <constraint firstAttribute="bottom" secondItem="ILQ-8O-LeQ" secondAttribute="bottom" constant="20" symbolic="YES" id="kkn-ce-vnP"/>
+                            <constraint firstItem="v9G-Xz-2Zc" firstAttribute="centerX" secondItem="ILQ-8O-LeQ" secondAttribute="centerX" id="lh4-X5-Tzq"/>
+                            <constraint firstItem="bEW-8y-MYk" firstAttribute="top" secondItem="SFK-Gc-cgY" secondAttribute="top" id="oOR-e9-qiG"/>
+                            <constraint firstItem="ILQ-8O-LeQ" firstAttribute="leading" secondItem="ZaF-ZO-iHT" secondAttribute="leadingMargin" id="t7R-M7-WSa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SFK-Gc-cgY"/>
                     </view>
                     <navigationItem key="navigationItem" id="t5q-U4-ThG" customClass="TravelBroListItemDetailNav">
