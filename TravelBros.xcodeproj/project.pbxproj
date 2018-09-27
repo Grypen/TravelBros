@@ -18,6 +18,8 @@
 		42D0DECE215CF00500F1AB45 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DEC5215CF00500F1AB45 /* FMDatabaseAdditions.m */; };
 		42D0DECF215CF00500F1AB45 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DEC6215CF00500F1AB45 /* FMResultSet.m */; };
 		42D0DED0215CF00500F1AB45 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DECB215CF00500F1AB45 /* FMDatabase.m */; };
+		42D0DED4215CF91300F1AB45 /* EntryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DED3215CF91300F1AB45 /* EntryPage.swift */; };
+		42D0DED5215CFDA500F1AB45 /* travelbrosDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 42D0DE47215CDAE300F1AB45 /* travelbrosDB.db */; };
 		42FEDE1E215CCF73008420BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FEDE1C215CCF73008420BF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,7 @@
 		42D0DECB215CF00500F1AB45 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		42D0DED1215CF05900F1AB45 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		42D0DED2215CF0EA00F1AB45 /* TravelBros-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TravelBros-Bridging-Header.h"; sourceTree = "<group>"; };
+		42D0DED3215CF91300F1AB45 /* EntryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPage.swift; sourceTree = "<group>"; };
 		42FEDE1D215CCF73008420BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +84,7 @@
 				42FEDE1C215CCF73008420BF /* Main.storyboard */,
 				42D0DE45215CD52800F1AB45 /* EntryList.swift */,
 				42D0DE4A215CE95F00F1AB45 /* EntryCell.swift */,
+				42D0DED3215CF91300F1AB45 /* EntryPage.swift */,
 				42D0DE48215CE1B200F1AB45 /* TravelBrosSQL.swift */,
 				42B7A632215CB82F00A72A63 /* LaunchScreen.storyboard */,
 				42B7A635215CB82F00A72A63 /* Info.plist */,
@@ -161,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FEDE1E215CCF73008420BF /* Main.storyboard in Resources */,
+				42D0DED5215CFDA500F1AB45 /* travelbrosDB.db in Resources */,
 				42B7A634215CB82F00A72A63 /* LaunchScreen.storyboard in Resources */,
 				42B7A631215CB82F00A72A63 /* Assets.xcassets in Resources */,
 			);
@@ -180,6 +185,7 @@
 				42B7A62A215CB82E00A72A63 /* AppDelegate.swift in Sources */,
 				42D0DE49215CE1B200F1AB45 /* TravelBrosSQL.swift in Sources */,
 				42D0DECE215CF00500F1AB45 /* FMDatabaseAdditions.m in Sources */,
+				42D0DED4215CF91300F1AB45 /* EntryPage.swift in Sources */,
 				42D0DECF215CF00500F1AB45 /* FMResultSet.m in Sources */,
 				42D0DECD215CF00500F1AB45 /* FMDatabaseQueue.m in Sources */,
 			);

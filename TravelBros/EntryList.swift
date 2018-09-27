@@ -12,18 +12,18 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
-    var entryData = RestaurantDataSQL()
+    var entryData = TravelBrosSQL()
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    @IBOutlet weak var restaurantTable: UITableView!
+    @IBOutlet weak var entriesTable: UITableView!
     @IBOutlet weak var loadActivity: UIActivityIndicatorView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         entryData.loadDB()
-        loadActivity.isHidden = true
+//        loadActivity.isHidden = true
         //        restData.dataDel = self  // Firebase
         
         //        searchController.searchResultsUpdater = self
@@ -40,7 +40,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func laddaTabell() {
-        restaurantTable.reloadData()
+        entriesTable.reloadData()
         loadActivity.isHidden = true
     }
     
@@ -49,11 +49,11 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! RestaurantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! EntryCell
         let row = indexPath.row
         let entryCell = entryData.entryArray[row]
-        cell.restLabel.text = entryCell.name
-        cell.restImage.image = entryCell.thumb
+        cell.entryLabel.text = entryCell.date
+//        cell.entryImage.image = entryCell.thumb
         return cell
     }
     
@@ -65,10 +65,10 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestPage" {
-            if let entryPage = segue.destination as? RestaurantPage {
+            if let entryPage = segue.destination as? EntryPage {
                 if let indx = sender as? Int {
                     let newEntry = entryData.entryArray[indx]
-                    entryPage.restaurantID = newEntry.id
+                    entryPage.entryID = newEntry.id
                 }
             }
         }
