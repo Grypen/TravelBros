@@ -14,7 +14,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var entryData = TravelBrosSQL()
     
-    let searchController = UISearchController(searchResultsController: nil)
+//    let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var entriesTable: UITableView!
     @IBOutlet weak var loadActivity: UIActivityIndicatorView!
@@ -23,7 +23,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         entryData.loadDB()
-//        loadActivity.isHidden = true
+      loadActivity.isHidden = true
         //        restData.dataDel = self  // Firebase
         
         //        searchController.searchResultsUpdater = self
@@ -36,7 +36,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewWillAppear(_ animated: Bool) {
         //        restData.restaurantArray.removeAll()
         //        restData.loadDB()
-        //        restaurantTable.reloadData()
+                entriesTable.reloadData()
     }
     
     func laddaTabell() {
@@ -49,10 +49,11 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! EntryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "entryID", for: indexPath) as! EntryCell
         let row = indexPath.row
         let entryCell = entryData.entryArray[row]
         cell.entryLabel.text = entryCell.date
+        print(entryData.entryArray[row])
 //        cell.entryImage.image = entryCell.thumb
         return cell
     }

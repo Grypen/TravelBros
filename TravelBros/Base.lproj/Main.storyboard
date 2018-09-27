@@ -222,7 +222,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="51" id="hQb-Ke-kCM" customClass="EntryCell" customModule="TravelBros" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryID" rowHeight="51" id="hQb-Ke-kCM" customClass="EntryCell" customModule="TravelBros" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="30" width="375" height="51"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQb-Ke-kCM" id="TWU-6b-rKV">
@@ -239,10 +239,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="entryLabel" destination="ERK-5l-53I" id="jTF-9s-GFO"/>
                                             <segue destination="98g-V7-eS1" kind="show" identifier="TravelBroItemShowDetails" id="GC9-n7-9Hg"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SiI-QF-lho" id="81b-NA-r96"/>
+                                    <outlet property="delegate" destination="SiI-QF-lho" id="21d-7k-6T1"/>
+                                </connections>
                             </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-ft-PEd">
                                 <rect key="frame" x="177" y="324" width="20" height="20"/>
@@ -267,6 +272,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="entriesTable" destination="XzW-kS-p89" id="fTC-eS-hgW"/>
+                        <outlet property="loadActivity" destination="hKl-ft-PEd" id="ld2-MK-c2G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qiv-GZ-G3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

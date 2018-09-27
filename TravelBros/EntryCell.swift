@@ -10,13 +10,16 @@ import UIKit
 
 //hanterar individuella celler i inläggslistan
 class EntryCell: UITableViewCell {
+    
+    
     @IBOutlet weak var entryLabel: UILabel!
-    @IBOutlet weak var entryImage: UIImageView!
+    
+//    @IBOutlet weak var entryImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        entryImage.layer.cornerRadius = 20
-        entryImage.clipsToBounds = true
+//       entryImage.layer.cornerRadius = 20
+//       entryImage.clipsToBounds = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
