@@ -8,13 +8,15 @@
 
 import UIKit
 
-class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchControllerDelegate {
+    
     
     
     
     var entryData = TravelBrosSQL()
     
-//    let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
+
     
     @IBOutlet weak var entriesTable: UITableView!
     @IBOutlet weak var loadActivity: UIActivityIndicatorView!
@@ -26,11 +28,13 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
       loadActivity.isHidden = true
         //        restData.dataDel = self  // Firebase
         
-        //        searchController.searchResultsUpdater = self
-        //        searchController.searchBar.placeholder = "Sök namn"
-        //        searchController.searchBar.sizeToFit()
-        //        searchController.dimsBackgroundDuringPresentation = false
-        //        restaurantTable.tableHeaderView = searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Sök namn"
+        searchController.searchBar.sizeToFit()
+        searchController.dimsBackgroundDuringPresentation = false
+        entriesTable.tableHeaderView = searchController.searchBar
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,16 +49,23 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryData.entryArray.count
+        if searchController.isActive {
+            return entryData.searchArray.count
+        } else {
+            return entryData.entryArray.count
+        }
+//        return entryData.entryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryID", for: indexPath) as! EntryCell
         let row = indexPath.row
-        let entryCell = entryData.entryArray[row]
+        var entryCell = entryData.entryArray[row]
+        if searchController.isActive {
+            entryCell = entryData.searchArray[row]
+        }
         cell.entryLabel.text = entryCell.date
 //        print(entryData.entryArray[row])
-//        cell.entryImage.image = entryCell.thumb
         return cell
     }
     
@@ -63,12 +74,22 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
         performSegue(withIdentifier: "TravelBroItemShowDetails", sender: row)
     }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        if let search = searchController.searchBar.text {
+            entryData.searchArray = entryData.entryArray.filter {$0.date == search }
+            entriesTable.reloadData()
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TravelBroItemShowDetails" {
             if let entryPage = segue.destination as? EntryPage {
                 if let indx = sender as? Int {
-                    let newEntry = entryData.entryArray[indx]
+                    var newEntry = entryData.entryArray[indx]
+                    if searchController.isActive {
+                        newEntry = entryData.searchArray[indx]
+                    }
                     entryPage.entryID = newEntry.id
                 }
             }

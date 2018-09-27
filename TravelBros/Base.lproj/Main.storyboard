@@ -251,7 +251,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-5l-53I">
-                                                    <rect key="frame" x="142" y="3" width="89" height="40"/>
+                                                    <rect key="frame" x="142" y="3" width="88" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="textColor"/>
@@ -351,7 +351,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SFK-Gc-cgY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="t5q-U4-ThG" customClass="TravelBroListItemDetailNav">
+                    <navigationItem key="navigationItem" id="t5q-U4-ThG">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="DMj-LB-y1s">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="KNz-qm-gpz">
                                 <rect key="frame" x="310" y="5" width="49" height="34"/>

@@ -20,6 +20,7 @@ class TravelBrosSQL {
     }
     
     var entryArray:[Entry] = []
+    var searchArray:[Entry] = []
     var oneEntry = Entry()
     var dbPath = ""
     
