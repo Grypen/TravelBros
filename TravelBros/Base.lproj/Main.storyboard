@@ -281,10 +281,10 @@
             </objects>
             <point key="canvasLocation" x="884" y="25.637181409295355"/>
         </scene>
-        <!--Entry Detail-->
+        <!--Entry Page-->
         <scene sceneID="vtj-qE-0gi">
             <objects>
-                <viewController id="98g-V7-eS1" customClass="EntryDetail" sceneMemberID="viewController">
+                <viewController id="98g-V7-eS1" customClass="EntryPage" customModule="TravelBros" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZaF-ZO-iHT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -337,6 +337,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="bEW-8y-MYk" id="VnQ-oH-D32"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83i-09-Yd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
