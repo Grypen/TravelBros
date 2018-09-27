@@ -8,7 +8,8 @@
 
 import UIKit
 
-class RestaurantCell: UITableViewCell {
+//hanterar individuella celler i inläggslistan
+class EntryCell: UITableViewCell {
     @IBOutlet weak var entryLabel: UILabel!
     @IBOutlet weak var entryImage: UIImageView!
     
