@@ -46,11 +46,11 @@ class TravelBrosSQL {
         let database = FMDatabase(path: dbPath)
         if database.open() {
             do {
-                let resSet = try database.executeQuery("SELECT * from entries", values: nil)
-                while resSet.next() {
+                let entrySet = try database.executeQuery("SELECT * from entries", values: nil)
+                while entrySet.next() {
                     var newEntry = Entry()
-                    newEntry.id = resSet.string(forColumn:"id") ?? ""
-                    newEntry.date = resSet.string(forColumn:"date") ?? ""
+                    newEntry.id = entrySet.string(forColumn:"id") ?? ""
+                    newEntry.date = entrySet.string(forColumn:"date") ?? ""
 //                    if let imgData = resSet.data(forColumn:"thumb") {
 //                        newEntry.thumb = UIImage(data:imgData)
 //                    }
@@ -60,7 +60,7 @@ class TravelBrosSQL {
                 print(error)
             }
             database.close()
-            
+            dump(entryArray)
         }
     }
     
@@ -69,13 +69,13 @@ class TravelBrosSQL {
         let database = FMDatabase(path: dbPath)
         if database.open() {
             do {
-                let resSet = try database.executeQuery("SELECT * from entries WHERE id=?", values: [entryId])
-                while resSet.next() {
-                    self.oneEntry.date = resSet.string(forColumn:"date") ?? ""
-                     self.oneEntry.entry = resSet.string(forColumn:"entry") ?? ""
-                    self.oneEntry.address = resSet.string(forColumn:"address") ?? ""
+                let entrySet = try database.executeQuery("SELECT * from entries WHERE id=?", values: [entryId])
+                while entrySet.next() {
+                    self.oneEntry.date = entrySet.string(forColumn:"date") ?? ""
+                     self.oneEntry.entry = entrySet.string(forColumn:"entry") ?? ""
+                    self.oneEntry.address = entrySet.string(forColumn:"address") ?? ""
                    
-                    if let imgData = resSet.data(forColumn:"img") {
+                    if let imgData = entrySet.data(forColumn:"img") {
                         self.oneEntry.img = UIImage(data:imgData)
                     }
                 }

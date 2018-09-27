@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		425B6B8B215D0DC60047385C /* travelbrosDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 425B6B8A215D0DA90047385C /* travelbrosDB.db */; };
 		42B7A62A215CB82E00A72A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7A629215CB82E00A72A63 /* AppDelegate.swift */; };
 		42B7A631215CB82F00A72A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B7A630215CB82F00A72A63 /* Assets.xcassets */; };
 		42B7A634215CB82F00A72A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B7A632215CB82F00A72A63 /* LaunchScreen.storyboard */; };
@@ -19,18 +20,17 @@
 		42D0DECF215CF00500F1AB45 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DEC6215CF00500F1AB45 /* FMResultSet.m */; };
 		42D0DED0215CF00500F1AB45 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DECB215CF00500F1AB45 /* FMDatabase.m */; };
 		42D0DED4215CF91300F1AB45 /* EntryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D0DED3215CF91300F1AB45 /* EntryPage.swift */; };
-		42D0DED5215CFDA500F1AB45 /* travelbrosDB.db in Resources */ = {isa = PBXBuildFile; fileRef = 42D0DE47215CDAE300F1AB45 /* travelbrosDB.db */; };
 		42FEDE1E215CCF73008420BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FEDE1C215CCF73008420BF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		425B6B8A215D0DA90047385C /* travelbrosDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = travelbrosDB.db; path = ../../../../travelbrosDB.db; sourceTree = "<group>"; };
 		42B7A626215CB82E00A72A63 /* TravelBros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B7A629215CB82E00A72A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B7A630215CB82F00A72A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42B7A633215CB82F00A72A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42B7A635215CB82F00A72A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42D0DE45215CD52800F1AB45 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
-		42D0DE47215CDAE300F1AB45 /* travelbrosDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = travelbrosDB.db; sourceTree = "<group>"; };
 		42D0DE48215CE1B200F1AB45 /* TravelBrosSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBrosSQL.swift; sourceTree = "<group>"; };
 		42D0DE4A215CE95F00F1AB45 /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		42D0DEAE215CEF3A00F1AB45 /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				42D0DE48215CE1B200F1AB45 /* TravelBrosSQL.swift */,
 				42B7A632215CB82F00A72A63 /* LaunchScreen.storyboard */,
 				42B7A635215CB82F00A72A63 /* Info.plist */,
-				42D0DE47215CDAE300F1AB45 /* travelbrosDB.db */,
+				425B6B8A215D0DA90047385C /* travelbrosDB.db */,
 				42D0DEAE215CEF3A00F1AB45 /* FMDatabase.h */,
 				42D0DECB215CF00500F1AB45 /* FMDatabase.m */,
 				42D0DECA215CF00500F1AB45 /* FMDatabaseAdditions.h */,
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FEDE1E215CCF73008420BF /* Main.storyboard in Resources */,
-				42D0DED5215CFDA500F1AB45 /* travelbrosDB.db in Resources */,
+				425B6B8B215D0DC60047385C /* travelbrosDB.db in Resources */,
 				42B7A634215CB82F00A72A63 /* LaunchScreen.storyboard in Resources */,
 				42B7A631215CB82F00A72A63 /* Assets.xcassets in Resources */,
 			);
