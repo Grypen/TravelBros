@@ -8,31 +8,52 @@
 
 import UIKit
 
-class NewEntry: UITableViewController{
+class NewEntry: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    @IBOutlet weak var textDatePick: UITextField!
+    @IBOutlet weak var textAddress: UITextField!
     
+    @IBOutlet weak var entryEntry: UITextField!
     
-    @IBOutlet weak var datePick: UITextField!
+    @IBOutlet weak var entryImage: UIImageView!
     
-    private var datePicker: UIDatePicker?
+    let entryData = TravelBrosSQL()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .date
-        datePicker?.addTarget(self, action: #selector(NewEntry.dateChanged(datePicker:)), for: .valueChanged)
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(NewEntry.viewTapped(gestureRecognizer:)))
-        
-        datePick.inputView = datePicker
     }
-    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
-        view.endEditing(true)
+
+    @IBAction func saveData(){
+        entryData.oneEntry.date = textDatePick.text ?? ""
+        entryData.oneEntry.address = textAddress.text ?? ""
+        entryData.oneEntry.entry = entryEntry.text ?? ""
+        
+        if entryImage.image != nil{
+            entryData.oneEntry.img = entryImage.image
+        }
+        
+        entryData.uploadData()
     }
-    @objc func dateChanged(datePicker: UIDatePicker){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        datePick.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func nyBild(_ sender: UIButton){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        if sender.tag == 1 {imagePicker.sourceType = .camera}
+        else if sender.tag == 2{imagePicker.sourceType = .photoLibrary}
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 }
