@@ -12,9 +12,12 @@ class EntryPage: UIViewController {
     
     
     @IBOutlet weak var dateLabel: UILabel!
+    
     @IBOutlet weak var addressLabel: UILabel!
-     @IBOutlet weak var entryImage: UIImageView!
+   
+    @IBOutlet weak var entryImage: UIImageView!
     @IBOutlet weak var entryText: UITextView!
+    
     
     var entryID = ""
     
