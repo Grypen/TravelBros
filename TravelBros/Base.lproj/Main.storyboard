@@ -59,23 +59,12 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ffc-ea-qzz">
-                                                    <rect key="frame" x="0.0" y="37" width="375" height="162"/>
-                                                    <date key="date" timeIntervalSinceReferenceDate="559656061.284657">
-                                                        <!--2018-09-26 12:01:01 +0000-->
-                                                    </date>
-                                                </datePicker>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Mel-Az-abc" firstAttribute="trailing" secondItem="iSg-yu-hbW" secondAttribute="trailingMargin" id="2Oq-20-3o0"/>
                                                 <constraint firstItem="dO1-Kc-ULM" firstAttribute="leading" secondItem="iSg-yu-hbW" secondAttribute="leadingMargin" id="7jL-pF-XGo"/>
-                                                <constraint firstItem="ffc-ea-qzz" firstAttribute="top" secondItem="Mel-Az-abc" secondAttribute="bottom" constant="2" id="AS3-7d-e0c"/>
                                                 <constraint firstItem="Mel-Az-abc" firstAttribute="top" secondItem="iSg-yu-hbW" secondAttribute="topMargin" constant="-6" id="Kyi-jD-AYS"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ffc-ea-qzz" secondAttribute="bottom" constant="-10" id="SPC-Ak-y6q"/>
-                                                <constraint firstItem="ffc-ea-qzz" firstAttribute="top" secondItem="dO1-Kc-ULM" secondAttribute="bottom" constant="5" id="h5x-6N-AZG"/>
-                                                <constraint firstAttribute="trailing" secondItem="ffc-ea-qzz" secondAttribute="trailing" id="kRF-32-Y7y"/>
                                                 <constraint firstItem="dO1-Kc-ULM" firstAttribute="top" secondItem="iSg-yu-hbW" secondAttribute="topMargin" id="leR-dU-5M8"/>
-                                                <constraint firstItem="ffc-ea-qzz" firstAttribute="leading" secondItem="iSg-yu-hbW" secondAttribute="leading" id="vNK-E7-xZK"/>
                                                 <constraint firstItem="Mel-Az-abc" firstAttribute="leading" secondItem="dO1-Kc-ULM" secondAttribute="trailing" constant="89" id="vcv-uw-olz"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -178,10 +167,13 @@
                             <outlet property="delegate" destination="9vs-p1-0fu" id="xc0-fY-OkN"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="datePick" destination="Mel-Az-abc" id="hDH-ge-lFz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykO-GL-p9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="-639"/>
+            <point key="canvasLocation" x="1648.8" y="-639.13043478260875"/>
         </scene>
         <!--Entry Detail Map-->
         <scene sceneID="TMQ-mc-F73">
