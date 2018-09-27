@@ -6,31 +6,13 @@
 //  Copyright © 2018 Edvard Hedlund. All rights reserved.
 //
 
-//
-//  ViewController.swift
-//  RestaurangGuiden
-//
-//  Created by Sten R Kaiser on 2018-08-24.
-//  Copyright © 2018 Kaiser&Kaiser. All rights reserved.
-//
-
 import UIKit
 
-class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, DataDelegate {
-    
-    
-    //    func updateSearchResults(for searchController: UISearchController){
-    //        if let searchController.searchBar.text {
-    //            restData.searchArray = restData.restaurantArray.filter {$0.name == search}
-    //
-    //
-    //        }
-    //    }
+class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
-    //    var restData = RestaurantDataFB()
-    var restData = RestaurantDataSQL()
+    var entryData = RestaurantDataSQL()
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -40,7 +22,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, D
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        restData.loadDB()
+        entryData.loadDB()
         loadActivity.isHidden = true
         //        restData.dataDel = self  // Firebase
         
@@ -63,15 +45,15 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, D
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restData.restaurantArray.count
+        return entryData.entryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestCell", for: indexPath) as! RestaurantCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath) as! RestaurantCell
         let row = indexPath.row
-        let restCell = restData.restaurantArray[row]
-        cell.restLabel.text = restCell.name
-        cell.restImage.image = restCell.thumb
+        let entryCell = entryData.entryArray[row]
+        cell.restLabel.text = entryCell.name
+        cell.restImage.image = entryCell.thumb
         return cell
     }
     
@@ -83,10 +65,10 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, D
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestPage" {
-            if let restPage = segue.destination as? RestaurantPage {
+            if let entryPage = segue.destination as? RestaurantPage {
                 if let indx = sender as? Int {
-                    let newRest = restData.restaurantArray[indx]
-                    restPage.restaurantID = newRest.id
+                    let newEntry = entryData.entryArray[indx]
+                    entryPage.restaurantID = newEntry.id
                 }
             }
         }
