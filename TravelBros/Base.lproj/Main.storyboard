@@ -171,9 +171,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-J3-exy">
-                                                    <rect key="frame" x="169" y="5" width="36" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-J3-exy">
+                                                    <rect key="frame" x="168" y="4" width="38" height="35"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="ADD">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,6 +183,11 @@
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.55365401635095635" green="0.77774032360406098" blue="0.36258557552661669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="3Tb-J3-exy" firstAttribute="centerX" secondItem="yEV-nJ-O4y" secondAttribute="centerX" id="PO4-rZ-U4Q"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Tb-J3-exy" secondAttribute="bottom" constant="-6" id="lnG-ge-794"/>
+                                                <constraint firstItem="3Tb-J3-exy" firstAttribute="centerY" secondItem="yEV-nJ-O4y" secondAttribute="centerY" id="wuA-10-OYM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -270,7 +274,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.42666815468338609" green="0.57660755821644882" blue="0.77774032360406098" alpha="0.10870612157534247" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="entryLabel" destination="ERK-5l-53I" id="jTF-9s-GFO"/>
                                         </connections>

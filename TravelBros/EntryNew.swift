@@ -18,11 +18,29 @@ class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControl
     @IBOutlet weak var entryImage: UIImageView!
     
     let entryData = TravelBrosSQL()
+    private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .date
+        datePicker?.addTarget(self, action: #selector(EntryNew.dataChanged(datePicker:)),for: .valueChanged)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EntryNew.viewTapped(gestureRecognizer:)))
+        view.addGestureRecognizer(tapGesture)
+        
+        textDatePick.inputView = datePicker
     }
 
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
+    @objc func dataChanged(datePicker: UIDatePicker){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyy"
+        textDatePick.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
     @IBAction func saveData(){
         entryData.oneEntry.date = textDatePick.text ?? ""
         entryData.oneEntry.address = textAddress.text ?? ""
