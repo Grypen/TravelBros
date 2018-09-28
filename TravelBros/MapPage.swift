@@ -36,6 +36,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
                     let region = MKCoordinateRegion.init(center: entryMapLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
                     self.entryMapView.setRegion(region, animated: false)
                     
+                    //WTHE THINGS under the PIN
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = entryMapLocation.coordinate
                     let distString = String(format: "%.1f", distance/1000)
@@ -53,7 +54,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         
     }
     
-    
+    //BÄSTEMMER vart den ska rita, från vårt till ENTRY location
     func drawDirection() {
         let startPlacemark = MKPlacemark(coordinate: myLocation.coordinate, addressDictionary: nil)
         let endPlacemark = MKPlacemark(coordinate: entryLocation.coordinate, addressDictionary: nil)
