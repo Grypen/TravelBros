@@ -47,11 +47,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
                    self.findMyLocation()
                 }
             }
-            
-            
-            
-            
-            
+
         })
         
         
@@ -64,13 +60,6 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: startPlacemark)
         directionRequest.destination = MKMapItem(placemark: endPlacemark)
-        
-//        switch routeBtn.selectedSegmentIndex {
-//        case 1:
-//            directionRequest.transportType = MKDirectionsTransportType.walking
-//        default:
-//            directionRequest.transportType = MKDirectionsTransportType.automobile
-//        }
         
         let directions = MKDirections(request: directionRequest)
         directions.calculate { (routeResponse, routeError) in
@@ -91,7 +80,6 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     }
     
     func findMyLocation() {
-        print("hello location")
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()

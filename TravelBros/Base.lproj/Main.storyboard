@@ -29,10 +29,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="27"/>
         </scene>
-        <!--New Entry-->
+        <!--Entry New-->
         <scene sceneID="sYR-ZQ-n6e">
             <objects>
-                <tableViewController id="9vs-p1-0fu" customClass="NewEntry" sceneMemberID="viewController">
+                <tableViewController id="9vs-p1-0fu" customClass="EntryNew" customModule="TravelBros" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0gN-Fs-Y9m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +55,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FFc-Jf-qkn">
-                                                    <rect key="frame" x="139" y="9" width="220" height="30"/>
+                                                    <rect key="frame" x="139" y="9" width="219" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -73,7 +73,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YrQ-zc-heV">
-                                                    <rect key="frame" x="139" y="9" width="220" height="30"/>
+                                                    <rect key="frame" x="139" y="9" width="219" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -113,6 +113,9 @@
                                                     <state key="normal" title="Gallery">
                                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="nyBild:" destination="9vs-p1-0fu" eventType="touchUpInside" id="Fck-Sb-IfC"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="0.050808005140000001" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,7 +146,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ib-h3-ij9">
-                                                    <rect key="frame" x="139" y="9" width="220" height="30"/>
+                                                    <rect key="frame" x="139" y="9" width="219" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -161,14 +164,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-J3-exy">
-                                                    <rect key="frame" x="169" y="5" width="37" height="34"/>
+                                                    <rect key="frame" x="169" y="5" width="36" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <state key="normal" title="ADD">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="saveData" destination="9vs-p1-0fu" eventType="touchUpInside" id="3Af-Z8-bxP"/>
+                                                        <action selector="saveData" destination="9vs-p1-0fu" eventType="touchUpInside" id="6l6-J7-M2n"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -184,10 +187,10 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="entryEntry" destination="2ib-h3-ij9" id="K0d-qj-cHW"/>
-                        <outlet property="entryImage" destination="bbn-RM-0Fd" id="rzK-9Y-CAp"/>
-                        <outlet property="textAddress" destination="YrQ-zc-heV" id="gK3-B7-VsR"/>
-                        <outlet property="textDatePick" destination="FFc-Jf-qkn" id="W2v-7Q-FmE"/>
+                        <outlet property="entryEntry" destination="2ib-h3-ij9" id="Om1-Ro-kF4"/>
+                        <outlet property="entryImage" destination="bbn-RM-0Fd" id="jIQ-TS-dSu"/>
+                        <outlet property="textAddress" destination="YrQ-zc-heV" id="oWV-we-ef6"/>
+                        <outlet property="textDatePick" destination="FFc-Jf-qkn" id="brs-HB-3j2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykO-GL-p9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -235,7 +238,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hKl-ft-PEd">
-                                <rect key="frame" x="176" y="324" width="20" height="20"/>
+                                <rect key="frame" x="175" y="324" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="30" sectionFooterHeight="30" translatesAutoresizingMaskIntoConstraints="NO" id="XzW-kS-p89">
@@ -251,7 +254,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERK-5l-53I">
-                                                    <rect key="frame" x="142" y="3" width="88" height="40"/>
+                                                    <rect key="frame" x="141" y="3" width="88" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="textColor"/>

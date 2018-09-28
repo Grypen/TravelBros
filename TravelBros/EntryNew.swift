@@ -8,13 +8,13 @@
 
 import UIKit
 
-class NewEntry: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    @IBOutlet weak var textDatePick: UITextField!
+   @IBOutlet weak var textDatePick: UITextField!
     @IBOutlet weak var textAddress: UITextField!
-    
+
     @IBOutlet weak var entryEntry: UITextField!
-    
+
     @IBOutlet weak var entryImage: UIImageView!
     
     let entryData = TravelBrosSQL()
@@ -27,11 +27,11 @@ class NewEntry: UITableViewController, UITextFieldDelegate, UIImagePickerControl
         entryData.oneEntry.date = textDatePick.text ?? ""
         entryData.oneEntry.address = textAddress.text ?? ""
         entryData.oneEntry.entry = entryEntry.text ?? ""
-        
+
         if entryImage.image != nil{
             entryData.oneEntry.img = entryImage.image
         }
-        
+    
         entryData.uploadData()
     }
     
@@ -41,10 +41,11 @@ class NewEntry: UITableViewController, UITextFieldDelegate, UIImagePickerControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+//        entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
     
+    //öppnar gallery
     @IBAction func nyBild(_ sender: UIButton){
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -52,7 +53,7 @@ class NewEntry: UITableViewController, UITextFieldDelegate, UIImagePickerControl
         else if sender.tag == 2{imagePicker.sourceType = .photoLibrary}
         self.present(imagePicker, animated: true, completion: nil)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
