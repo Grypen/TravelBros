@@ -43,12 +43,14 @@ class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControl
     }
     
     @objc func dataChanged(datePicker: UIDatePicker){
+        //Format the date, by day, month, year.
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyy"
+        //parse the pick
         textDatePick.text = dateFormatter.string(from: datePicker.date)
-        view.endEditing(true)
     }
     @IBAction func saveData(){
+        // SAVE THE DATA
         entryData.oneEntry.date = textDatePick.text ?? ""
         entryData.oneEntry.address = textAddress.text ?? ""
         entryData.oneEntry.entry = entryEntry.text ?? ""
@@ -65,12 +67,13 @@ class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControl
         return true
     }
     
+    //SHOW the chosen image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
     
-    //öppnar gallery
+    //Open the gallery or the camera, based on TAG in view.
     @IBAction func nyBild(_ sender: UIButton){
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self

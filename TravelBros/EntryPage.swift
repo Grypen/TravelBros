@@ -25,6 +25,7 @@ class EntryPage: UIViewController {
         setEntryData()
     }
     
+    //Connect to map, get data from our entryPage to be parsed into map.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
             if let mPage = segue.destination as? MapPage {

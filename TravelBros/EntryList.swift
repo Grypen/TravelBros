@@ -56,7 +56,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         }
     }
     
-    //View the entries.
+    //View the entries based on entry ID
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryID", for: indexPath) as! EntryCell
         let row = indexPath.row
@@ -68,6 +68,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         return cell
     }
     
+    //Based on the user choice, show the approptriate detail.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         performSegue(withIdentifier: "TravelBroItemShowDetails", sender: row)

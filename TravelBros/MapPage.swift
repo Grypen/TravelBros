@@ -25,7 +25,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         var distance = 200.0
-        
+        //Draw the pin for the selected location, as well as add the distance at the botttom.
         CLGeocoder().geocodeAddressString(address, completionHandler: {(placemarks, error) in
             if let placemarks = placemarks {
                 let placemark = placemarks[0]
@@ -53,6 +53,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         
     }
     
+    
     func drawDirection() {
         let startPlacemark = MKPlacemark(coordinate: myLocation.coordinate, addressDictionary: nil)
         let endPlacemark = MKPlacemark(coordinate: entryLocation.coordinate, addressDictionary: nil)
@@ -71,6 +72,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         }
     }
     
+    //DRAW the route from my location to the entry locaiton
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
         renderer.lineWidth = 3.0
@@ -79,6 +81,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         return renderer
     }
     
+    //FIND my location
     func findMyLocation() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -90,6 +93,7 @@ class MapPage: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
         
     }
     
+    //Manage MY loctaion, to the LOCATION from the entry.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations[0]
         print(newLocation)
