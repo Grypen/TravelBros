@@ -13,7 +13,6 @@ class TravelBrosSQL {
     struct Entry {
         var id = ""
         var date = ""
-//        var imgUrl = ""
         var img:UIImage?
         var address = ""
         var entry = ""

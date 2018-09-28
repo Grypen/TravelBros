@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		425B6B8A215D0DA90047385C /* travelbrosDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = travelbrosDB.db; path = ../../../../travelbrosDB.db; sourceTree = "<group>"; };
+		425B6B8A215D0DA90047385C /* travelbrosDB.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = travelbrosDB.db; sourceTree = "<group>"; };
 		4288709C215D4D9D0028EC52 /* MapPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPage.swift; sourceTree = "<group>"; };
 		42B7A626215CB82E00A72A63 /* TravelBros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B7A629215CB82E00A72A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

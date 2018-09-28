@@ -13,6 +13,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     
     // Connnect to DB
+    // LOCAL DATAASE SHOULD BE IN USERS/YOURUSERNAME/travelbrosDB.db
     var entryData = TravelBrosSQL()
     
     //Create the search controller

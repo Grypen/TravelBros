@@ -10,27 +10,34 @@ import UIKit
 
 class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-   @IBOutlet weak var textDatePick: UITextField!
+    //Connect to outlets
+    @IBOutlet weak var textDatePick: UITextField!
     @IBOutlet weak var textAddress: UITextField!
-
     @IBOutlet weak var entryEntry: UITextField!
-
     @IBOutlet weak var entryImage: UIImageView!
     
+    //Connnect to database to save data
     let entryData = TravelBrosSQL()
+    
+    //Create date picker
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //A bunch of code to create the date picekr
         datePicker = UIDatePicker()
+        //Mode for the date?
         datePicker?.datePickerMode = .date
+        //Target. Where it should be displayed
         datePicker?.addTarget(self, action: #selector(EntryNew.dataChanged(datePicker:)),for: .valueChanged)
+        //Creatre tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EntryNew.viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
-        
+        //IF picker should be displayed
         textDatePick.inputView = datePicker
     }
 
+    //When tapped outside the bounds, close the picker
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
     }
