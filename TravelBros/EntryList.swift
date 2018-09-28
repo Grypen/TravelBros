@@ -12,12 +12,13 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     
     
-    
+    // Connnect to DB
     var entryData = TravelBrosSQL()
     
+    //Create the search controller
     let searchController = UISearchController(searchResultsController: nil)
 
-    
+    //Connect items in view to the outlet, so we can use them here.
     @IBOutlet weak var entriesTable: UITableView!
     @IBOutlet weak var loadActivity: UIActivityIndicatorView!
     
@@ -25,11 +26,9 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
         entryData.loadDB()
-      loadActivity.isHidden = true
-        //        restData.dataDel = self  // Firebase
-        
+        loadActivity.isHidden = true //WHen the view loads, hide this.
         searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Sök namn"
+        searchController.searchBar.placeholder = "Search entries"
         searchController.searchBar.sizeToFit()
         searchController.dimsBackgroundDuringPresentation = false
         entriesTable.tableHeaderView = searchController.searchBar
@@ -38,25 +37,25 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //        restData.restaurantArray.removeAll()
-        //        restData.loadDB()
                 entriesTable.reloadData()
     }
     
+    // Load the table
     func laddaTabell() {
         entriesTable.reloadData()
         loadActivity.isHidden = true
     }
     
+    //View the table of searches
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive {
             return entryData.searchArray.count
         } else {
             return entryData.entryArray.count
         }
-//        return entryData.entryArray.count
     }
     
+    //View the entries.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryID", for: indexPath) as! EntryCell
         let row = indexPath.row
@@ -65,7 +64,6 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             entryCell = entryData.searchArray[row]
         }
         cell.entryLabel.text = entryCell.date
-//        print(entryData.entryArray[row])
         return cell
     }
     
@@ -74,6 +72,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         performSegue(withIdentifier: "TravelBroItemShowDetails", sender: row)
     }
     
+    //Update search results
     func updateSearchResults(for searchController: UISearchController) {
         if let search = searchController.searchBar.text {
             entryData.searchArray = entryData.entryArray.filter {$0.date == search }
@@ -81,7 +80,7 @@ class EntryList: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         }
     }
     
-    
+    //Go to the details of an entry
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TravelBroItemShowDetails" {
             if let entryPage = segue.destination as? EntryPage {
