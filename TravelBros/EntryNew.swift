@@ -41,7 +41,7 @@ class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControl
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-//        entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        entryImage.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         dismiss(animated: true, completion: nil)
     }
     
