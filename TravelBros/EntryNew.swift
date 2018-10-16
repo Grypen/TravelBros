@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -24,6 +25,8 @@ class EntryNew: UITableViewController, UITextFieldDelegate, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        entryEntry.layer.borderWidth = 1
+        entryEntry.layer.borderColor = UIColor.lightGray.cgColor
         //A bunch of code to create the date picekr
         datePicker = UIDatePicker()
         //Mode for the date?
